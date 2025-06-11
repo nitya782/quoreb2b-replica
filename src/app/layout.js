@@ -1,5 +1,7 @@
 import './globals.css';
 import { Quicksand } from 'next/font/google';
+import Footer from "../components/footer";
+import './globals.css';
 
 const quicksand = Quicksand({
   subsets: ['latin'],

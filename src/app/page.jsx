@@ -1,7 +1,7 @@
 import Footer from "../components/footer";
 import './globals.css';
 import Cards from "../components/cards";
-import Contact from "../components/contact";
+import Contact from "./contact/contact";
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">

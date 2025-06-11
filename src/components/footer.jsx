@@ -9,8 +9,8 @@ export default function Footer() {
         {/* Column 1: Logo + About */}
         <div className="pr-8">
           <div className="flex items-center gap-2 mb-2">
-            <Image src="/logo.png" alt="Logo" width={40} height={40} />
-            <h2 className="font-semibold text-xl text-gray-800 tracking-tight">QUORE B2B MARKETING</h2>
+            <Image src="/image/logo.png" alt="Logo" width={50} height={40} />
+            <h2 className="font-semibold text-base text-gray-800 tracking-tight">QUORE B2B MARKETING</h2>
           </div>
             <div className="flex gap-2">
             <div className="h-1 w-2 bg-[#00d8a6] mb-7 mt-3 rounded-sm"></div>
@@ -23,7 +23,7 @@ export default function Footer() {
 
         {/* Column 2: Quick Links */}
         <div className="pl-4">
-          <h3 className="font-semibold text-xl mb-2 tracking-tight text-gray-800">QUICK LINKS</h3>
+          <h3 className="text-base font-semibold mb-2 tracking-tight text-gray-800">QUICK LINKS</h3>
             <div className="flex gap-2">
             <div className="h-1 w-2 bg-[#00d8a6] mb-7 mt-3 rounded-sm"></div>
             <div className="h-1 w-10 bg-[#00d8a6] mb-7 mt-3 rounded-sm"></div>
@@ -40,7 +40,7 @@ export default function Footer() {
 
         {/* Column 3: Contact */}
         <div className="pl-4">
-          <h3 className="font-semibold text-xl mb-2 tracking-tight text-gray-800">CONTACT</h3>
+          <h3 className="font-semibold text-base mb-2 tracking-tight text-gray-800">CONTACT</h3>
             <div className="flex gap-2">
             <div className="h-1 w-2 bg-[#00d8a6] mb-7 mt-3 rounded-sm"></div>
             <div className="h-1 w-10 bg-[#00d8a6] mb-7 mt-3 rounded-sm"></div>
@@ -57,7 +57,7 @@ export default function Footer() {
 
         {/* Column 4: Map */}
         <div className="pl-4">
-          <h3 className="font-semibold text-xl mb-2 tracking-tight text-gray-800">LOCATION ON MAP</h3>
+          <h3 className="font-semibold text-base mb-2 tracking-tight text-gray-800">LOCATION ON MAP</h3>
             <div className="flex gap-2">
             <div className="h-1 w-2 bg-[#00d8a6] mb-7 mt-3 rounded-sm"></div>
             <div className="h-1 w-10 bg-[#00d8a6] mb-7 mt-3 rounded-sm"></div>
@@ -76,18 +76,92 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full bg-[#333] text-[#ffffffcb] text-sm flex items-center justify-between py-12 px-12 rounded-b-lg">
-        <span>© 2025 quoreb2b.com | All Rights Reserved.</span>
-        <a
-          href="https://www.linkedin.com/company/quoreb2bmarketing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#ffffffcb] hover:text-[#00d8a6] text-2xl transition-colors"
-          aria-label="LinkedIn"
-        >
-          <FaLinkedin />
-        </a>
-      </div>
+    {/* Bottom Bar */}
+<div className="relative w-full bg-gradient-to-br from-[#2a2a2a] via-[#333] to-[#1f1f1f] text-[#ffffffcb] text-sm flex items-center justify-between py-8 px-12 rounded-b-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-[#00d8a6]/20 border-t border-[#404040]">
+  {/* Animated background overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-[#00d8a6]/3 via-transparent to-[#00d8a6]/3 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+  
+  {/* Subtle animated dots */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute w-1 h-1 bg-[#00d8a6] rounded-full animate-pulse opacity-20" style={{top: '25%', left: '15%', animationDelay: '0s'}}></div>
+    <div className="absolute w-0.5 h-0.5 bg-[#00d8a6] rounded-full animate-pulse opacity-30" style={{top: '70%', left: '25%', animationDelay: '1.5s'}}></div>
+    <div className="absolute w-1 h-1 bg-[#00d8a6] rounded-full animate-pulse opacity-25" style={{top: '40%', right: '30%', animationDelay: '3s'}}></div>
+  </div>
+
+  {/* Copyright section with enhanced styling */}
+  <div className="relative z-10 flex items-center space-x-2">
+    <span className="text-[#ffffffcb] group-hover:text-white transition-all duration-300">©</span>
+    <span className="text-[#00d8a6] font-semibold hover:text-[#00f2b8] transition-colors duration-300 cursor-pointer tracking-wide">
+      2025 quoreb2b.com
+    </span>
+    <span className="text-[#ffffff80]">|</span>
+    <span className="text-[#ffffffcb] group-hover:text-white transition-colors duration-300">
+      All Rights Reserved.
+    </span>
+    
+    {/* Subtle badge */}
+    <div className="hidden lg:flex items-center ml-6 px-3 py-1 bg-[#404040]/50 rounded-full text-xs text-[#ffffff70] border border-[#505050]/30 hover:border-[#00d8a6]/30 transition-all duration-300">
+      <span className="w-2 h-2 bg-[#00d8a6] rounded-full mr-2 animate-pulse"></span>
+      B2B Excellence
+    </div>
+  </div>
+
+  {/* Enhanced LinkedIn section */}
+  <div className="relative z-10 flex items-center space-x-4">
+    <span className="hidden md:block text-xs text-[#ffffff50] font-light tracking-wider">
+      Connect with us
+    </span>
+    
+    <div className="flex items-center space-x-3">
+      <a
+        href="https://www.linkedin.com/company/quoreb2bmarketing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group/linkedin relative p-3 text-[#ffffffcb] hover:text-[#0077b5] text-xl transition-all duration-300 transform hover:scale-110 hover:-rotate-6 rounded-lg hover:bg-[#0077b5]/10"
+        aria-label="Follow us on LinkedIn"
+      >
+        {/* Glow effect */}
+        <div className="absolute inset-0 bg-[#0077b5]/20 rounded-lg opacity-0 group-hover/linkedin:opacity-100 transition-opacity duration-300 blur-sm"></div>
+        
+        <FaLinkedin className="relative z-10 drop-shadow-lg" />
+        
+        {/* Tooltip */}
+        <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-[#0077b5] text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover/linkedin:opacity-100 transition-all duration-300 pointer-events-none shadow-lg">
+          Follow on LinkedIn
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#0077b5]"></div>
+        </div>
+      </a>
+
+      {/* Additional social placeholder with subtle styling */}
+      <div className="w-px h-8 bg-[#404040] mx-2"></div>
+      
+      <button
+        className="group/contact relative p-2 text-[#ffffffcb] hover:text-[#00d8a6] text-lg transition-all duration-300 transform hover:scale-105 rounded-lg hover:bg-[#00d8a6]/10"
+        aria-label="Contact us"
+        onClick={() => window.open('mailto:contact@quoreb2b.com', '_blank')}
+      >
+        <div className="absolute inset-0 bg-[#00d8a6]/20 rounded-lg opacity-0 group-hover/contact:opacity-100 transition-opacity duration-300 blur-sm"></div>
+        <svg className="relative z-10 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+        </svg>
+        
+        {/* Tooltip */}
+        <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-[#00d8a6] text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover/contact:opacity-100 transition-all duration-300 pointer-events-none shadow-lg whitespace-nowrap">
+          Get in touch
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#00d8a6]"></div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  {/* Animated bottom accent line */}
+  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#00d8a6] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"></div>
+  
+  {/* Corner accents */}
+  <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-[#00d8a6] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-200"></div>
+  <div className="absolute bottom-0 right-0 w-8 h-0.5 bg-[#00d8a6] transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-200"></div>
+</div>
     </footer>
   );
 }
