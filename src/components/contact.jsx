@@ -1,13 +1,13 @@
 "use client";
-import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   return (
     <div className="bg-[#f7fafd] min-h-screen w-full">
       {/* Map Section */}
-      <div className="relative w-full h-[320px] md:h-[340px]">
+      <div className="relative w-full h-[340px]">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.3079362280475!2d73.92634797508817!3d18.559137382559303!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1113cf57bbf%3A0x7d5428026ecf655a!2sMagarpatta%20City!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.2294415337057!2d73.856743!3d18.5204303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c08744a74c81%3A0x4cbe7e56a3d1a1a9!2sPune%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1633958808463!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}
@@ -17,37 +17,50 @@ export default function Contact() {
           title="Quore B2B Marketing Location Map"
         ></iframe>
         {/* Cards */}
-        <div className="absolute w-full top-1/2 left-0 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 z-10 transform -translate-y-1/2">
+        <div className="absolute w-full top-1/2 left-0 flex flex-col md:flex-row justify-center items-center gap-8 z-10 transform -translate-y-1/2">
           {/* India Address */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 w-[320px] max-w-full flex flex-col items-start">
-            <div className="flex items-center mb-2">
-              <FaMapMarkerAlt className="text-2xl text-[#00d8a6] mr-2" />
-              <span className="font-semibold text-lg text-gray-800">ADDRESS :</span>
+          <div className="bg-white rounded-2xl shadow-lg p-8 w-[320px] max-w-full flex flex-col items-center">
+            <div className="flex items-center justify-center mb-4">
+              <span className="bg-[#00d8a6] text-white rounded-full p-3 mr-3">
+                <FaMapMarkerAlt className="text-xl" />
+              </span>
+              <span className="font-semibold text-lg text-gray-800">India Office</span>
             </div>
-            <div className="text-gray-700 text-sm">
-              <span className="text-[#00d8a6] font-bold">India:</span> Marvel Fuego Office 7140 seventh floor, opposite We Work, Magarpatta road Hadapsar Pune 411028
+            <div className="text-gray-700 text-center text-sm">
+              Marvel Fuego Office, 7140 seventh floor,<br />
+              opposite We Work, Magarpatta road,<br />
+              Hadapsar, Pune 411028
             </div>
           </div>
           {/* USA Address */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 w-[320px] max-w-full flex flex-col items-start">
-            <div className="flex items-center mb-2">
-              <FaMapMarkerAlt className="text-2xl text-[#00d8a6] mr-2" />
-              <span className="font-semibold text-lg text-gray-800">ADDRESS :</span>
+          <div className="bg-white rounded-2xl shadow-lg p-8 w-[320px] max-w-full flex flex-col items-center">
+            <div className="flex items-center justify-center mb-4">
+              <span className="bg-[#00d8a6] text-white rounded-full p-3 mr-3">
+                <FaMapMarkerAlt className="text-xl" />
+              </span>
+              <span className="font-semibold text-lg text-gray-800">USA Office</span>
             </div>
-            <div className="text-gray-700 text-sm">
-              <span className="text-[#00d8a6] font-bold">USA:</span> 539 W. Commerce St #2577 Dallas, TX 75208<br />
-              <span className="text-[#00d8a6] font-bold">PHONE:</span> +1 332-231-0404
+            <div className="text-gray-700 text-center text-sm">
+              539 W. Commerce St #2577<br />
+              Dallas, TX 75208
             </div>
           </div>
           {/* Phone/Email */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 w-[320px] max-w-full flex flex-col items-start">
-            <div className="flex items-center mb-2">
-              <FaPhoneAlt className="text-2xl text-[#00d8a6] mr-2" />
-              <span className="font-semibold text-lg text-gray-800">PHONE :</span>
+          <div className="bg-white rounded-2xl shadow-lg p-8 w-[320px] max-w-full flex flex-col items-center">
+            <div className="flex items-center justify-center mb-4">
+              <span className="bg-[#00d8a6] text-white rounded-full p-3 mr-3">
+                <FaPhoneAlt className="text-xl" />
+              </span>
+              <span className="font-semibold text-lg text-gray-800">Contact</span>
             </div>
-            <div className="text-gray-700 text-sm">
-              +1 332-231-0404<br />
-              contactus@quoreb2b.com
+            <div className="text-gray-700 text-center text-sm mb-2">
+              +1 332-231-0404
+            </div>
+            <div className="flex items-center justify-center">
+              <span className="bg-[#00d8a6] text-white rounded-full p-2 mr-2">
+                <FaEnvelope className="text-lg" />
+              </span>
+              <span className="text-gray-700 text-sm">contactus@quoreb2b.com</span>
             </div>
           </div>
         </div>
@@ -64,7 +77,7 @@ export default function Contact() {
           </h2>
           <div className="h-1 w-16 bg-[#00d8a6] my-6 rounded"></div>
           <p className="text-gray-500 text-sm">
-            When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees.
+            We’re here to help you grow your business. Fill out the form or reach out using the details above and our team will get back to you as soon as possible.
           </p>
         </div>
         {/* Right Side - Form */}
