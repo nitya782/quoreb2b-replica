@@ -2,6 +2,7 @@ import './globals.css';
 import { Quicksand } from 'next/font/google';
 import Footer from "../components/footer";
 import './globals.css';
+import Cards from "../components/cards";
 
 const quicksand = Quicksand({
   subsets: ['latin'],
@@ -21,6 +22,8 @@ export default function RootLayout({ children }) {
       <body>
         {/* Everything must go inside body */}
         {children}
+        <Cards />
+      <Footer />
       </body>
     </html>
   );
