@@ -5,7 +5,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { FiTarget, FiBarChart2, FiFilter, FiUsers, FiRefreshCw, FiShield } from "react-icons/fi";
 import { FaCheck } from "react-icons/fa";
 import { useState } from "react";
-
+import Head from 'next/head';
 
 
 export default function LeadGeneration() {
@@ -42,7 +42,17 @@ export default function LeadGeneration() {
     },
   ];
   
-  return (
+  return (<>
+        <Head>
+        <title>Lead Generation</title>
+        <meta property="og:title" content="Lead Generation" />
+        <meta property="og:description" content=" We identify and generate leads after taking them through the funnel.
+              Then, we verify their interest in your product." />
+        <meta property="og:image" content="" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="QuoreB2B marketing" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
     <section className="bg-[#fafcfa] py-16 px-2 md:px-0">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         
@@ -721,7 +731,7 @@ export default function LeadGeneration() {
   </div>
 </div>
 
-
     </section>
+    </>
   );
 }

@@ -67,7 +67,7 @@ export default function Contact() {
       <div className="relative w-full min-h-[480px] flex flex-col items-center justify-center z-0">
         <div className="w-full h-[420px] rounded-t-3xl overflow-hidden shadow-md">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.474936325403!2d-96.8194736848136!3d32.7781550809724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e991b3e6c7e2d%3A0x7e2b2e2b2e2b2e2b!2s539%20W%20Commerce%20St%20%232577%2C%20Dallas%2C%20TX%2075208%2C%20USA!5e0!3m2!1sen!2sin!4v1718273273432!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.1793079333634!2d73.93027927385937!3d18.520797569169968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1e490827b59%3A0xc6891bc6deabc8be!2sQuore%20B2B%20Private%20Limited!5e0!3m2!1sen!2sin!4v1739178092301!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -80,7 +80,8 @@ export default function Contact() {
         </div>
 
         {/* Office Cards */}
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-[-80px] w-full flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 px-4 z-10">
+<div className="relative w-full -mt-20 sm:-mt-16 flex flex-col md:flex-row flex-wrap items-center justify-center gap-6 px-4 z-10">
+
           {/* India Office */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -163,7 +164,7 @@ export default function Contact() {
       </div>
 
       {/* Contact Form Section */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-20 mt-60 mb-16">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-20 mt-30 mb-16">
         {/* Left: Image and Text */}
         <div className="flex-1 max-w-md">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
