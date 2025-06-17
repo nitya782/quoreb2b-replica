@@ -3,6 +3,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Head from 'next/head';
 
 const faqData = [
   {
@@ -40,7 +41,15 @@ export default function Contact() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  return (
+  return (<>
+      <Head>
+        <title>Contact</title>
+        <meta property="og:title" content="Contact" />
+        <meta property="og:description" content="Connect wit us." />
+        <meta property="og:image" content="" />
+        <meta property="og:site_name" content="QuoreB2B marketing" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
     <div className="bg-[#f7fafd] w-full min-h-screen">
       {/* Hero Section */}
       <div className="relative w-full h-[400px] bg-gradient-to-b from-[#00d8a6] to-[#c6e94a] rounded-b-3xl flex items-center justify-center px-6 shadow-md mb-2">
@@ -297,5 +306,6 @@ export default function Contact() {
         </div>
       </section>
     </div>
+    </>
   );
 }

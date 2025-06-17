@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+
 import { 
   FiSmartphone, 
   FiMonitor, 
@@ -17,6 +19,7 @@ import { useState } from "react";
 
 export default function TechConsulting() {
   const [activeService, setActiveService] = useState(0);
+  const router = useRouter();
 
   const services = [
     {
@@ -25,7 +28,8 @@ export default function TechConsulting() {
       description: "Native and cross-platform mobile applications that deliver exceptional user experiences across iOS and Android platforms.",
       features: ["Native iOS & Android", "React Native", "Flutter Development", "App Store Optimization"],
       techStack: ["Swift", "Kotlin", "React Native", "Flutter", "Firebase"],
-      deliverables: ["App Design", "Development", "Testing", "Deployment", "Maintenance"]
+      deliverables: ["App Design", "Development", "Testing", "Deployment", "Maintenance"],
+      slug: "Mobile-Apps"
     },
     {
       icon: <FiMonitor className="text-4xl" />,
@@ -33,15 +37,17 @@ export default function TechConsulting() {
       description: "Scalable web applications built with modern frameworks and technologies for optimal performance and user engagement.",
       features: ["Progressive Web Apps", "Single Page Applications", "Responsive Design", "Cloud Deployment"],
       techStack: ["React", "Next.js", "Vue.js", "Node.js", "Python"],
-      deliverables: ["Frontend Development", "Backend APIs", "Database Design", "Hosting Setup", "Performance Optimization"]
+      deliverables: ["Frontend Development", "Backend APIs", "Database Design", "Hosting Setup", "Performance Optimization"],
+      slug: "Web-Apps"
     },
     {
       icon: <FiPenTool className="text-4xl" />,
       title: "UI/UX Design",
-      description: "User -centered design solutions that combine aesthetic appeal with intuitive functionality to enhance user satisfaction.",
-      features: ["User  Research", "Wireframing", "Prototyping", "Design Systems"],
+      description: "User-centered design solutions that combine aesthetic appeal with intuitive functionality to enhance user satisfaction.",
+      features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
       techStack: ["Figma", "Adobe XD", "Sketch", "InVision", "Principle"],
-      deliverables: ["User  Research", "Wireframes", "High-Fidelity Designs", "Prototypes", "Design Guidelines"]
+      deliverables: ["User Research", "Wireframes", "High-Fidelity Designs", "Prototypes", "Design Guidelines"],
+      slug: "UI-UX-Design"
     },
     {
       icon: <FiShoppingCart className="text-4xl" />,
@@ -49,7 +55,8 @@ export default function TechConsulting() {
       description: "Complete e-commerce platforms with secure payment processing, inventory management, and conversion optimization.",
       features: ["Payment Integration", "Inventory Management", "Order Processing", "Analytics Dashboard"],
       techStack: ["Shopify", "WooCommerce", "Magento", "Stripe", "PayPal"],
-      deliverables: ["Store Setup", "Payment Gateway", "Product Catalog", "Admin Panel", "SEO Optimization"]
+      deliverables: ["Store Setup", "Payment Gateway", "Product Catalog", "Admin Panel", "SEO Optimization"],
+      slug: "Ecommerce-Solutions"
     },
     {
       icon: <FiLink className="text-4xl" />,
@@ -57,15 +64,17 @@ export default function TechConsulting() {
       description: "Seamless integration of third-party services and custom API development to enhance functionality and data flow.",
       features: ["RESTful APIs", "GraphQL", "Webhook Integration", "API Documentation"],
       techStack: ["REST", "GraphQL", "Postman", "Swagger", "Zapier"],
-      deliverables: ["API Development", "Integration Setup", "Documentation", "Testing", "Monitoring"]
+      deliverables: ["API Development", "Integration Setup", "Documentation", "Testing", "Monitoring"],
+      slug: "Api-Integration"
     },
     {
       icon: <FiCloud className="text-4xl" />,
       title: "SaaS Solutions",
       description: "End-to-end Software as a Service platforms with subscription management, multi-tenancy, and scalable architecture.",
-      features: ["Multi-tenant Architecture", "Subscription Billing", "User  Management", "Analytics"],
+      features: ["Multi-tenant Architecture", "Subscription Billing", "User Management", "Analytics"],
       techStack: ["AWS", "Azure", "Docker", "Kubernetes", "MongoDB"],
-      deliverables: ["Platform Development", "Billing System", "User  Dashboard", "Admin Console", "Deployment"]
+      deliverables: ["Platform Development", "Billing System", "User Dashboard", "Admin Console", "Deployment"],
+      slug: "Saas-Solutions"
     }
   ];
 
@@ -98,6 +107,11 @@ export default function TechConsulting() {
       description: "Smooth deployment process followed by ongoing maintenance and support services."
     }
   ];
+
+const handleServiceNavigation = (slug) => {
+  router.push(`/Services/Tech-Consulting/${slug}`);
+};
+
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -191,40 +205,51 @@ export default function TechConsulting() {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-6 border border-gray-300 rounded-2xl hover:border-[#00d8a6] hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                  className="p-6 border border-gray-300 rounded-2xl hover:border-[#00d8a6] hover:shadow-2xl hover:scale-105 transition-all duration-300 relative"
                 >
                   <div>
                     {service.icon}
                     <h3 className="text-2xl font-bold mt-4 mb-2 text-gray-900">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
+                    <p className="text-gray-600 mb-6">{service.description}</p>
                   </div>
+                  
                   <div className="grid grid-cols-2 gap-4 mt-8">
                     <div>
                       <h4 className="text-teal-500 font-medium">Features</h4>
-                      <ul>
+                      <ul className="text-sm text-gray-600 mt-2">
                         {service.features.map((feature, i) => (
-                          <li key={i}>{feature}</li>
+                          <li key={i} className="mb-1">• {feature}</li>
                         ))}
                       </ul>
                     </div>
                     <div>
                       <h4 className="text-teal-500 font-medium">Tech Stack</h4>
-                      <ul>
+                      <ul className="text-sm text-gray-600 mt-2">
                         {service.techStack.map((tech, i) => (
-                          <li key={i}>{tech}</li>
+                          <li key={i} className="mb-1">• {tech}</li>
                         ))}
                       </ul>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 mt-8">
-                    <div>
-                      <h4 className="text-teal-500 font-medium">Deliverables</h4>
-                      <ul>
-                        {service.deliverables.map((deliverable, i) => (
-                          <li key={i}>{deliverable}</li>
-                        ))}
-                      </ul>
-                    </div>
+                  
+                  <div className="mt-6">
+                    <h4 className="text-teal-500 font-medium">Deliverables</h4>
+                    <ul className="text-sm text-gray-600 mt-2">
+                      {service.deliverables.map((deliverable, i) => (
+                        <li key={i} className="mb-1">• {deliverable}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Learn More Button */}
+                  <div className="mt-8 pt-4 border-t border-gray-200">
+                    <button
+                      onClick={() => handleServiceNavigation(service.slug)}
+                      className="w-full bg-gradient-to-r from-[#00d8a6] to-[#c6e94a] text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      Learn More
+                      <FiArrowRight className="text-lg" />
+                    </button>
                   </div>
                 </motion.div>
               ))}
@@ -234,7 +259,7 @@ export default function TechConsulting() {
       </section>
 
       {/* Work Process Section */}
-      <section className="bg-gray-100 py-20 px-4 text-center">
+      <section className="bg-white py-20 px-4 text-center">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -266,7 +291,7 @@ export default function TechConsulting() {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 px-4" style={{backgroundColor: 'rgb(0 130 197 / 10%)'}}>
+      <section className="py-20 px-4" style={{backgroundColor: 'white'}}>
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -371,11 +396,11 @@ export default function TechConsulting() {
 {/* CTA Section */}
 <section
   className="py-20 px-4"
-  style={{ backgroundColor: 'rgb(0 130 197 / 10%)' }}
+  style={{ backgroundColor: 'white' }}
 >
   <div
     className="max-w-4xl mx-auto text-center rounded-3xl px-8 py-12 shadow-xl"
-    style={{ backgroundColor: 'rgb(0 130 197 / 20%)' }}
+    style={{ backgroundColor: 'rgb(0 130 197 / 40%)' }}
   >
     <motion.div
       initial={{ y: 50, opacity: 0 }}
@@ -386,23 +411,17 @@ export default function TechConsulting() {
       <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
         Ready to Start Your Project?
       </h2>
-      <p className="text-gray-200 text-2xl mb-8 leading-relaxed">
+      <p className="text-white text-2xl mb-8 leading-relaxed">
         Let's discuss your ideas and create something amazing together.
         Our team is ready to bring your vision to life.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href="/contact"
+          href="/Contact"
           className="bg-white text-[#0082c5] font-semibold px-8 py-3 rounded-full shadow-md hover:bg-[#0082c5] hover:text-white transition duration-300"
         >
           Contact Us
-        </a>
-        <a
-          href="/portfolio"
-          className="bg-[#0082c5] text-white font-semibold px-8 py-3 rounded-full shadow-md hover:bg-white hover:text-[#0082c5] transition duration-300"
-        >
-          View Portfolio
         </a>
       </div>
     </motion.div>
