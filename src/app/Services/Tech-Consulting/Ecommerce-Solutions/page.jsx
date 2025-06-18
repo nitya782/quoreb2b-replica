@@ -126,7 +126,7 @@ export default function ECommercePage() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1584515932024-1c1c1c1c1c1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  src="https://th.bing.com/th/id/OIP.g-84myijHmqgIt-ckZ0AaAHaE8?r=0&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3" 
                   alt="E-commerce Development"
                   className="w-full h-96 object-cover"
                 />
@@ -362,6 +362,32 @@ export default function ECommercePage() {
           </motion.div>
         </div>
       </section>
+
+<div className="bg-gray-50 rounded-2xl p-8">
+  <h3 className="text-2xl font-bold text-gray-800 mb-6">Project Details</h3>
+  <div className="space-y-4">
+    <div className="flex justify-between items-center">
+      <span className="text-gray-600">Timeline:</span>
+      <span className="font-semibold text-gray-800">4-8 weeks</span>
+    </div>
+    <div className="flex justify-between items-center">
+      <span className="text-gray-600">Starting Price:</span>
+      <span className="font-semibold text-[#00d8a6]">$5,000</span>
+    </div>
+    <div className="flex justify-between items-center">
+      <span className="text-gray-600">Team Size:</span>
+      <span className="font-semibold text-gray-800">2-4 experts</span>
+    </div>
+    <div className="flex justify-between items-center">
+      <span className="text-gray-600">Support:</span>
+      <span className="font-semibold text-gray-800">6 months included</span>
+    </div>
+  </div>
+  
+  <button className="w-full mt-8 bg-gradient-to-r from-[#00d8a6] to-[#c6e94a] text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+    Start Your Project
+  </button>
+</div>
     </div>
   );
 }
